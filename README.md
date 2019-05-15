@@ -1,4 +1,4 @@
-# top-hat-empty-setup
+# simple-react-redux-saga-app
 
 This repo holds a sample code to use react with redux to make requests to APIs.
 
@@ -29,10 +29,10 @@ At all the time the user can log out and then go back to the login page.
 ## Tips
 
 The apps can easily be enhanced. 
-  1- In the header we ca add more menus tabs
-  2- In component folder we can add more components
-  3- In redux, we can more actions and add the processing in the Saga middleware 
-  4- The production build can be made just by running the command : `npm run build`
+  1. In the header we ca add more menus tabs
+  2. In component folder we can add more components
+  3. In redux, we can more actions and add the processing in the Saga middleware 
+  4. The production build can be made just by running the command : `npm run build`
 
 
 To run the test type `npm run test`
