@@ -1,0 +1,31 @@
+.duration-has-changed-icon {
+    cursor: pointer;  
+ }
+ #options-item {
+    .warning-popover-paper {
+      border: 2px solid grey;
+      border-radius: 10px;
+      position: absolute;
+      width: 250px;
+      right: 0;
+      margin-top: 10px;
+      padding: 8px;
+      font-family: Lato;
+      font-size: 12px;
+      height: 70px;
+      .product-name {
+        margin-bottom: 15px;
+      }
+      &:focus {
+          outline: none;
+      }
+      button {
+        height: 20px;
+        padding: 0px;
+        font-size: 12px;
+        margin: 1px 4px;
+      }
+
+    }
+ }
+ 

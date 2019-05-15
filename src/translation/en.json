@@ -1,0 +1,21 @@
+{
+    "buttons.header": "Welcome to the buttons section",
+    "datepicker.today": "Today",
+    "default.error.msg": "Sorry, something went wrong.",
+    "default.delete.error.msg": "Something went wrong, please try again later",
+
+
+    "header.button.account": "Account",
+    "header.dropdown.menu.logout": "Logout",
+
+
+    "redeem.action.cancel": "Cancel",
+    "redeem.action.apply": "Apply",
+
+
+    "auth.success": "Login succesful",
+    "auth.failure": "Authentication failed, Try with the correct username/password",
+    "auth.signin": "Sign in",
+    "auth.username": "Username",
+    "auth.password": "Password"
+}

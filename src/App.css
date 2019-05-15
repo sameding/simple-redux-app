@@ -1,0 +1,17 @@
+.App {
+  text-align: left;
+  padding-top: 2%;
+}
+
+.main-container-grid-input {
+  width: 50%;
+}
+
+.main-container-grid-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container-grid-table {
+  margin-top: 1%;
+}

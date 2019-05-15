@@ -1,0 +1,89 @@
+.home-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 70vh;
+
+  span {
+    display: block;
+  }
+  .home-container-main {
+      width: 100%;
+      .product {
+        margin: 25px 25px;
+        .product-name {
+          color: brown;
+        }
+        .product-options {
+          display: flex;
+          flex-direction: row;
+
+          button {
+            margin-right: 10px;
+          }
+          #options-Bronze {
+            color: rgb(63, 97, 190);
+            border-color: rgb(63, 97, 190);
+          }
+          #options-Silver {
+            color: rgba(36, 25, 25, 0.664);
+            border-color: rgba(36, 25, 25, 0.664);
+          }
+          #options-Gold {
+            color: rgba(255, 217, 0, 0.904);
+            border-color: rgba(255, 217, 0, 0.904);
+          }
+        }
+      }
+  }
+  .icon-xl {
+    height: 50px;
+    width: 50px;
+  }
+  .btn-xl-link {
+      text-decoration: none;
+  }
+
+  .btn-divider {
+    background-color: grey;
+    height: 1px;
+    border: 0;
+    margin-top: 20px;
+  }
+
+  .btn-xl {
+    height: 260px;
+    max-width: 488px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+    text-transform: capitalize;
+    h1 {
+      margin-bottom: 20px;
+      margin-top: 15px;
+      line-height: 39px;
+    }
+    &:hover span{
+      color: #fff;
+    }
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+
+  .loyalty-info {
+    display: flex;
+    flex-direction: row;
+    &-name {
+      color: grey;
+    }
+    &-points {
+      background-color: aquamarine;
+    }
+  }
+
+}

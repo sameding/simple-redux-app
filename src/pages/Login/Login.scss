@@ -1,0 +1,21 @@
+.main {
+    width: auto;
+    display: block;
+
+}
+.paper {
+
+    display: flex;
+    flexDirection: column;
+    alignItems: center;
+    padding: 20px;
+}
+.avatar {
+   margin-left: 48%;
+}
+.form {
+    width: 100%;
+}
+#auth-failure {
+    color: crimson;
+}
