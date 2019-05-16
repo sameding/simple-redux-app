@@ -33,6 +33,3 @@ The apps can easily be enhanced.
   2. In component folder we can add more components
   3. In redux, we can more actions and add the processing in the Saga middleware 
   4. The production build can be made just by running the command : `npm run build`
-
-
-To run the test type `npm run test`
