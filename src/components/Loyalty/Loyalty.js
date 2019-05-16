@@ -1,26 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Popover from '@material-ui/core/Popover';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import Slide from '@material-ui/core/Slide';
 import { FormattedMessage } from 'react-intl';
 import './Loyalty.scss';
 
+
+
 class Loyalty extends React.Component {
   state = {
-    anchorEl: null,
+    open: false
   };
 
-  handleClick = event => {
-    this.setState({
-      anchorEl: event.currentTarget,
-    });
+  handleClick = () => {
+    this.setState({ open: true });
   };
 
   handleClose = () => {
-    this.setState({
-      anchorEl: null,
-    });
+    this.setState({ open: false });
   };
 
   handleUpdateEvent = () => {
@@ -28,10 +30,12 @@ class Loyalty extends React.Component {
    this.handleClose();
   };
 
-
+  Transition = (props) => {
+    return <Slide direction="up" {...props} />;
+  }
+  
   render() {
-    const { anchorEl } = this.state;
-    const open = Boolean(anchorEl);
+    
     const { option, userCurrentPoints } = this.props;
 
     let clasName = `options-${option.name}`;
@@ -44,54 +48,47 @@ class Loyalty extends React.Component {
         <Button   variant="outlined"  id={clasName} onClick={this.handleClick} >
             {option.name} {option.value}
         </Button>
-        <Popover
-          id="options-item"
-          open={open}
-          anchorEl={anchorEl}
+        <Dialog
+          open={this.state.open}
+          TransitionComponent={this.Transition}
+          keepMounted
           onClose={this.handleClose}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
-
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
-
-          PaperProps={{
-              className: 'warning-popover-paper'
-          }}
+          aria-labelledby="alert-dialog-slide-title"
+          aria-describedby="alert-dialog-slide-description"
         >
           
-          <Typography gutterBottom component="p" className="product-name">
-            {canRedeem ? canRedeemMessage : canNotRedeemMessage}
-          </Typography>
-          <div className='popover-bottom'>
-                    <Button
-                        onClick={this.handleClose}
-                        variant="outlined"
-                        color="secondary"
-                        size="medium"
-                    >
-                        <FormattedMessage
-                            id='redeem.action.cancel'
-                            description='btn-text'
-                        />
-                    </Button>
-                    <Button
-                        onClick={this.handleUpdateEvent}
-                        color="secondary"
-                        variant="contained"
-                        disabled={!canRedeem}
-                    >
-                        <FormattedMessage
-                            id="redeem.action.apply"
-                            description="btn-text"
-                        />
-                    </Button>
-                </div>
-        </Popover>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              <Typography gutterBottom component="p" className="product-name">
+                {canRedeem ? canRedeemMessage : canNotRedeemMessage}
+              </Typography>
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button
+                onClick={this.handleClose}
+                variant="outlined"
+                color="secondary"
+                size="medium"
+            >
+                <FormattedMessage
+                    id='redeem.action.cancel'
+                    description='btn-text'
+                />
+            </Button>
+            <Button
+                onClick={this.handleUpdateEvent}
+                color="secondary"
+                variant="contained"
+                disabled={!canRedeem}
+            >
+                <FormattedMessage
+                    id="redeem.action.apply"
+                    description="btn-text"
+                />
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   }
@@ -104,3 +101,4 @@ Loyalty.propTypes = {
 };
 
 export default Loyalty;
+   
